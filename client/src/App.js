@@ -4,7 +4,7 @@ import Newnav from './components/Newnavbaar/Newnav';
 import Maincomponent from './components/home/Maincomponent';
 import Footer from './components/footer/Footer';
 import SignUp from './components/signup_sign/SignUp';
-import Sign_in from './components/signup_sign/Sign_in';
+import Sign_in from './components/signup_sign/SignIn';
 import { Routes, Route } from 'react-router-dom';
 import Cart from './components/cart/Cart';
 import Buynow from './components/buynow/Buynow';
