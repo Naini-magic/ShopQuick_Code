@@ -8,7 +8,7 @@ import Right from './Right';
 const Buynow = () => {
 
 
-    const [cartdata , setCartdata ] = useState("");
+  const [cartdata , setCartdata ] = useState("");
     // console.log(cartdata.carts);
 
 
