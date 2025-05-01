@@ -12,7 +12,10 @@ const router = require("./routes/router")
 
 app.use(express.json());
 app.use(cookieParser(""));
-app.use(cors());
+app.use( cors({
+    origin: "https://shopquick-clientside.onrender.com", // or your deployed frontend URL
+    credentials: true
+  }));
 app.use(router);
 
 
