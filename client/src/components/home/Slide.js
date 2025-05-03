@@ -137,7 +137,8 @@ const Slide = ({ title, products }) => {
         containerClass='carousel-container'
       >
         {
-          products.map((e) => {
+          // products.map((e) => {
+            Array.isArray(products) && products.map((e) => {
             return (
               <NavLink to={`/getproductsone/${e.id}`}>
                 <div className='products_items'>

@@ -9,7 +9,9 @@ import { useDispatch , useSelector } from 'react-redux';
 const Maincomponent = () => {
 
 
-  const {products} = useSelector(state => state.getproductsdata);
+  // const {products} = useSelector(state => state.getproductsdata);
+  const products = useSelector(state => state.getproductsdata?.products) || [];
+
   console.log(products);
 
   const dispatch = useDispatch();
