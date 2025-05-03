@@ -94,9 +94,9 @@ const Sign_in = () => {
                 </div>
 
                 <div className='create_accountinfo'>
-                    <p>New To Amazon</p>
+                    <p>New To ShopQuick</p>
                     <NavLink to="/register">
-                        <button>Create Your Amazon Account</button>
+                        <button>Create Your Account</button>
                     </NavLink>
                 </div>
             </div>

@@ -163,7 +163,7 @@ export const Navbar = () => {
 
         <div className='right'>
           <div className='nav_btn'>
-            <NavLink to="/login">signin</NavLink>
+            <NavLink to="/login">Sign In</NavLink>
           </div>
 
 

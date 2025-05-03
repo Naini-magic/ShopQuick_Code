@@ -7,3 +7,11 @@
     border-bottom: 2px solid rgb(199 , 199 , 199);
 
 }
+
+.center_img img {
+    display: block;
+    width: 80%;
+    height: 350px; /* Adjust to your desired height */
+    object-fit: cover; /* Keeps the aspect ratio while filling the height */
+    margin: 13px auto;
+}
