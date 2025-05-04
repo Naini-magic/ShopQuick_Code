@@ -32,7 +32,7 @@ const SignUp = () => {
         const { fname, email, mobile, password, cpassword } = udata;
 
 
-        const res = await fetch("/register", {
+        const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/register`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
