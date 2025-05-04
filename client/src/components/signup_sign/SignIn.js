@@ -33,7 +33,7 @@ const Sign_in = () => {
         e.preventDefault();
         const { email , password } = logData;
 
-        const res = await fetch("/login" , {
+        const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/login` , {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
