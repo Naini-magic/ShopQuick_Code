@@ -45,7 +45,7 @@ export const Navbar = () => {
 
 
   const getdetailvaliduser = async () => {
-    const res = await fetch("/validuser", {
+    const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/validuser`, {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -81,7 +81,7 @@ export const Navbar = () => {
   }
 
   const logoutuser = async () => {
-    const res2 = await fetch("/logout", {
+    const res2 = await fetch(`${process.env.REACT_APP_BACKEND_URL}/logout', {
       method: "GET",
       headers: {
         Accept: "application/json",
