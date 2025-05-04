@@ -13,7 +13,7 @@ const Option = ({deletedata , get}) => {
 
   const removedata = async (req , res) => {
     try{
-      const res = await fetch(`/remove/${deletedata}` , {
+      const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/remove/${deletedata}` , {
         method : "DELETE",
         headers : {
           Accept : "application/json",
