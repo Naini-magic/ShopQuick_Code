@@ -13,10 +13,7 @@ const Buynow = () => {
 
 
   const getdatabuy = async() => {
-
-    // const res = await fetch("/cartdetails" , {
-
-    const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/cartdetails` , {
+    const res = await fetch("/cartdetails" , {
         method : "GET",
         headers: {
             Accept: "application/json",
