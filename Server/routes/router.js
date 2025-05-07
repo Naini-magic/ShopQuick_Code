@@ -101,10 +101,14 @@ router.post("/login" , async(req , res) => {
           const token = await userlogin.generatAuthtoken();
           console.log(token);
           
-          res.cookie("Amazonweb" , token, {
+          // 
+          res.cookie("Amazonweb", token, {
             expires: new Date(Date.now() + 900000),
-            httpOnly : true
-          })
+            httpOnly: true,
+            secure: process.env.NODE_ENV === "production", // Enable in production
+            sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+            domain: process.env.NODE_ENV === "production" ? ".yourdomain.com" : undefined
+          });
           res.status(201).json(userlogin);
         }
       }

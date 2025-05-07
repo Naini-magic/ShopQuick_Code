@@ -13,7 +13,7 @@ const router = require("./routes/router")
 app.use(express.json());
 app.use(cookieParser(""));
 app.use( cors({
-    origin: "http://localhost:3000", 
+    origin: "https://shopquick-clientside.onrender.com", 
     credentials: true
   }));
 app.use(router);

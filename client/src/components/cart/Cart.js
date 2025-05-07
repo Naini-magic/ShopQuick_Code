@@ -242,17 +242,22 @@ const Cart = () => {
           Accept: "application/json",
           "Content-Type": "application/json",
         },
+        credentials: "include",
         body: JSON.stringify({
           inddata,
         }),
-        credentials: "include",
       }
     );
 
+
+
+    
     const data1 = await checkres.json();
     // console.log(data1);
 
     if (checkres.status === 401 || !data1) {
+      alert("Session expired. Please login again.");
+      histroy("/login");
       console.log("user invalid");
       alert("user invalid");
     } else {
