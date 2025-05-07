@@ -103,11 +103,11 @@ router.post("/login" , async(req , res) => {
           
           // 
           res.cookie("Amazonweb", token, {
-            expires: new Date(Date.now() + 900000),
+            expires: new Date(Date.now() + 15 * 60 * 1000), // 15 minutes
             httpOnly: true,
-            secure: false, 
-            sameSite: "lax", 
-            domain:".shopquick-clientside.onrender.com"
+            secure: true, // Set to true because you're using HTTPS on Render
+            sameSite: "none", // Must be "none" for cross-site cookies
+            domain: "shopquick-clientside.onrender.com" // Allow cookies on this domain
           });
           
           res.status(201).json(userlogin);
