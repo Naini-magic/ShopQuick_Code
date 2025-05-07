@@ -96,6 +96,8 @@ router.post("/login" , async(req , res) => {
             res.status(400).json({error : "invalid details"})
         }else{
 
+
+          
           const token = await userlogin.generatAuthtoken();
           console.log(token);
           
@@ -140,9 +142,9 @@ router.post("/addcart/:id" , authenticate , async(req , res) => {
     }
 
   }catch(error){
-    // res.status(401).json({error : "invalid user"});
+    res.status(401).json({ error: "unauthorized" });
     console.log(error);
-  }
+  }  
 })
 
 

@@ -6,6 +6,8 @@ const secreatKey = process.env.KEY;
 const authenticate = async(req , res , next) => {
     try {
         const token = req.cookies.Amazonweb;
+        if (!token) return res.status(401).json({ error: "Unauthorized" });
+
         const verifyToken = jwt.verify(token , secreatKey);
         console.log(verifyToken);
 
@@ -23,7 +25,7 @@ const authenticate = async(req , res , next) => {
 
         next();
     }catch (error){
-     res.status(401).send("unautherized : No token provide ")
+     res.status(401).send("Unautherized : No token provide ")
      console.log(error)
     }
 }

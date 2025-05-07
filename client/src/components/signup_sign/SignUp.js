@@ -31,12 +31,20 @@ const SignUp = () => {
         e.preventDefault();
         const { fname, email, mobile, password, cpassword } = udata;
 
+        if (!fname || !email || !mobile || !password || !cpassword) {
+            return toast.warn("Please fill all fields", { position: "top-center" });
+          }
+          if (password !== cpassword) {
+            return toast.error("Passwords do not match", { position: "top-center" });
+          }
+                  
 
-        const res = await fetch("/register", {
+        const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/register`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
+            credentials: "include",
             body: JSON.stringify({
                 fname, email, mobile, password, cpassword
             })
@@ -76,7 +84,7 @@ const SignUp = () => {
                         </div>
                         <div className='form_data'>
                             <label htmlFor='number'>Mobile</label>
-                            <input type='text' onChange={adddata} value={udata.number} name='mobile' id='mobile' />
+                            <input type='text' onChange={adddata} value={udata.mobile}name='mobile' id='mobile' />
                         </div>
 
                         <div className='form_data'>

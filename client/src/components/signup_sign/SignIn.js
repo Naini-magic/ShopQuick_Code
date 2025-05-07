@@ -33,11 +33,12 @@ const Sign_in = () => {
         e.preventDefault();
         const { email , password } = logData;
 
-        const res = await fetch("/login" , {
+        const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/login` , {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
+            credentials : "include",
             body: JSON.stringify({
             email  , password
             })
@@ -46,7 +47,7 @@ const Sign_in = () => {
         const data = await res.json();
         console.log(data);
 
-        if(res.status == 400 || !data ){
+        if(res.status === 400 || !data ){
             console.log(" Invalid details ")
             toast.warn("Invalid data " , {
                 position: "top-center"
@@ -57,7 +58,7 @@ const Sign_in = () => {
             toast.success("user data valid" , {
                 position: "top-center"
             })
-            setData({...logData , email:"" , password:""});  
+            setData({ email: "", password: "" });
             navigate("/");    
         }
 
