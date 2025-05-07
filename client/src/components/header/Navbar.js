@@ -81,7 +81,11 @@ export const Navbar = () => {
   }
 
   const logoutuser = async () => {
+<<<<<<< HEAD
     const res2 = await fetch(`${process.env.REACT_APP_BACKEND_URL}/logout', {
+=======
+    const res2 = await fetch(`${process.env.REACT_APP_BACKEND_URL}/logout`, {
+>>>>>>> 65f02d0 (7-may)
       method: "GET",
       headers: {
         Accept: "application/json",

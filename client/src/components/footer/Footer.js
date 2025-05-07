@@ -3,7 +3,6 @@ import "./footer.css";
 
 
 const year = new Date().getFullYear();
-console.log(year);
 
 
  const Footer = () => {

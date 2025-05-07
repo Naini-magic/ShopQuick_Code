@@ -38,6 +38,7 @@ const Sign_in = () => {
             headers: {
                 "Content-Type": "application/json"
             },
+            credentials : "include",
             body: JSON.stringify({
             email  , password
             })
@@ -46,7 +47,7 @@ const Sign_in = () => {
         const data = await res.json();
         console.log(data);
 
-        if(res.status == 400 || !data ){
+        if(res.status === 400 || !data ){
             console.log(" Invalid details ")
             toast.warn("Invalid data " , {
                 position: "top-center"
@@ -57,7 +58,7 @@ const Sign_in = () => {
             toast.success("user data valid" , {
                 position: "top-center"
             })
-            setData({...logData , email:"" , password:""});  
+            setData({ email: "", password: "" });
             navigate("/");    
         }
 

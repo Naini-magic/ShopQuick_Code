@@ -13,6 +13,10 @@ const Buynow = () => {
 
 
   const getdatabuy = async() => {
+<<<<<<< HEAD
+=======
+    // const res = await fetch("/cartdetails" , {
+>>>>>>> 65f02d0 (7-may)
     const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/cartdetails` , {
         method : "GET",
         headers: {
