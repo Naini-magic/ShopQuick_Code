@@ -105,10 +105,11 @@ router.post("/login" , async(req , res) => {
           res.cookie("Amazonweb", token, {
             expires: new Date(Date.now() + 900000),
             httpOnly: true,
-            secure: process.env.NODE_ENV === "production", // Enable in production
-            sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
-            domain: process.env.NODE_ENV === "production" ? ".yourdomain.com" : undefined
+            secure: false, 
+            sameSite: "lax", 
+            domain:".shopquick-clientside.onrender.com"
           });
+          
           res.status(201).json(userlogin);
         }
       }
